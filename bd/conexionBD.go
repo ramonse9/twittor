@@ -2,16 +2,20 @@ package bd
 
 import (
 	"context"
+	"log"
+
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"log"
 )
 
 /*MongoCN es el onjeto de conexion a la BD*/
 var MongoCN = ConectarBD()
 
 // var clientOptions = options.Client().ApplyURI("mongodb+srv://pokemondb_user:JCTu1et2U89eBKw@pokemoncluster.ywymhby.mongodb.net/?retryWrites=true&w=majority")
-var clientOptions = options.Client().ApplyURI("mongodb+srv://twittor_user:o7VR9R4ByEDRDUri@pokemoncluster.ywymhby.mongodb.net/?retryWrites=true&w=majority")
+
+//var clientOptions = options.Client().ApplyURI("mongodb+srv://twittor_user:o7VR9R4ByEDRDUri@pokemoncluster.ywymhby.mongodb.net/?retryWrites=true&w=majority")
+
+var clientOptions = options.Client().ApplyURI("mongodb://192.168.100.6:27017/?compressors=zlib")
 
 /*ConectarBD es la función que me permite copnectar la BD*/
 func ConectarBD() *mongo.Client {
